@@ -1,0 +1,30 @@
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: -100;    
+  background-size: cover;
+  pointer-events: none;
+}
+
+#countdown {
+  font-size: 200%;
+  color: yellow;
+
+  width: 300px;
+  margin: 0 auto;
+}

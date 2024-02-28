@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>airmaxdotcom</title>
+    <script src="/airmaxdotcom.js"></script>
+    <link rel="stylesheet" href="/airmaxdotcom.css">
+  </head>
+  <body>
+
+    <div id="countdown"></div>
+
+    <video controls preload="true" controls="false" disablePictureInPicture="true" autoplay loop muted class="bg">
+      <source src="clouds.mp4" type="video/mp4" /> 
+    </video>
+    <script>
+      airmaxdotcom.startCountdown(document.getElementById("countdown"));
+    </script>
+  </body>
+</html>
