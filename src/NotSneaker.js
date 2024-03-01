@@ -1,5 +1,8 @@
 import * as THREE from "three";
 
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+
+
 export class NotSneaker extends HTMLElement {
   constructor() {
     super()
@@ -33,6 +36,8 @@ export class NotSneakerApp {
       new THREE.MeshBasicMaterial({color: 0x00ff00}),
     );
     this.scene.add(this.cube);
+    this.scene.add(new THREE.AmbientLight(0x404040));
+    this.scene.add(new THREE.DirectionalLight(0xffffff, 0.5));
   }
 
   init() {
@@ -55,15 +60,34 @@ export class NotSneakerApp {
     this.renderer.setSize(this.el.width, this.el.height);
 
     this.scene = new THREE.Scene();
+
+
+    const rock = "/RockSet05-OBJ/RockSet05C.obj";
+    const loader = new OBJLoader();
+
+    loader.load(rock, (obj) => {
+      this.rock = obj.children[0];
+      const s = 0.3;
+      this.rock.scale.set(s, s, s);
+      this.scene.add(this.rock);
+    });
   }
 
   update() {
-    let t = +new Date() / 100.0;
+    let t = +new Date() / 50.0;
     this.camera.position.set(0, 0, 5);
     this.camera.lookAt(0, 0, 0);
     this.cube.rotation.x = +0.03 * t;
     this.cube.rotation.y = -0.04 * t;
     this.cube.rotation.z = +0.01 * t;
+    this.cube.visible = false;
+
+    if (this.rock) {
+      this.rock.rotation.x = +0.03 * t;
+      this.rock.rotation.y = -0.04 * t;
+      this.rock.rotation.z = +0.01 * t;
+    }
+
   }
 
   draw() {
