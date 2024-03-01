@@ -1,6 +1,7 @@
 *.swp
+*.zip
 .DS_Store
-node_modules/
-dist/
 dist-zipped/
+dist/
+node_modules/
 yarn.lock

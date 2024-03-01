@@ -92,3 +92,17 @@ html, body {
   width: 100%;
   display: block;
 }
+
+.center {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fifty-fifty {
+  width: auto;
+  max-width: 50%;
+}
