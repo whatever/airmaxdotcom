@@ -22,7 +22,7 @@ export class Countdown {
 
     this.until = {
       milliseconds: until % 1000,
-      seconds: seconds % 60 + (until % 1000) / 1000,
+      seconds: seconds % 60,
       minutes: minutes % 60,
       hours: hours % 24,
       days: days
@@ -36,16 +36,18 @@ export class Countdown {
     let frac = this.until.milliseconds / 1000;
 
     this.el.innerHTML = `
-    <div>
-      ${days}
+    <div style="font-style: italic">
+      <div>
+        ${days}
+        <br>
+        <span style="font-size: 50%">days</span>
+      </div>
       <br>
-      <span style="font-size: 50%">days</span>
-    </div>
-    <br>
-    <div>
-      <span>${hours}</span> :
-      <span>${minutes}</span> :
-      <span>${seconds.toFixed(3)}</span>
+      <div>
+        <span>${hours}</span> :
+        <span>${minutes}</span> :
+        <span>${seconds}</span>
+      </div>
     </div>
     `;
   }
