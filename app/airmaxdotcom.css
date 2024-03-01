@@ -11,6 +11,19 @@
   src: url("/FranieTest-ExtraCondensedExtraBoldItalic.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Digital 7";
+  font-weight: normal;
+  src: url("/digital-7 (mono italic).ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "Digital 7";
+  font-weight: normal;
+  font-style: italic;
+  src: url("/digital-7 (mono italic).ttf")  format("truetype");
+}
+
 em {
   font-style: italic;
 }
@@ -77,6 +90,7 @@ html, body {
 }
 
 #countdown {
+  font-family: "Digital 7";
   display: block;
   position: absolute;
   margin: 0;
