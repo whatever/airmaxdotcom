@@ -179,7 +179,7 @@ body.splash #splash-page .fifty-fifty {
   max-width: auto;
   min-width: 50%;
   opacity: 100%;
-  animation: zoom-out 1s;
+  animation: zoom-out 0.3s;
 }
 
 
@@ -189,15 +189,7 @@ body.no-splash #splash-page .fifty-fifty {
   max-width: auto;
   min-width: 50%;
   opacity: 0%;
-  animation: zoom-in 1s;
-}
-
-body.no-splash #splash-page .fifty-fifty {
-  width: auto;
-  max-width: auto;
-  min-width: 600%;
-  opacity: 0%;
-  animation: zoom-in 1s;
+  animation: zoom-in 0.3s;
 }
 
 body.no-splash #countdown-page {
