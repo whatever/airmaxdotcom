@@ -22,3 +22,19 @@ export function startCountdown(el) {
 
 
 customElements.define("not-sneaker", NotSneaker);
+
+
+
+window.addEventListener("load", function() {
+  let splash = true;
+
+  window.addEventListener("click", function() {
+    if (splash = !splash) {
+      document.body.classList.add("splash");
+      document.body.classList.remove("no-splash");
+    } else {
+      document.body.classList.remove("splash");
+      document.body.classList.add("no-splash");
+    }
+  });
+});
