@@ -101,7 +101,7 @@ html, body {
 
 
 .block {
-  position: relative;
+  position: fixed;
   height: 100%;
   width: 100%;
   display: block;
@@ -128,24 +128,77 @@ html, body {
 
 
 
+
+
+/** NO SPLASH **/
+
+@keyframes zoom-in {
+  0% {
+    width: auto;
+    max-width: auto;
+    min-width: 50%;
+    opacity: 100%;
+  }
+  100% {
+    width: auto;
+    max-width: auto;
+    min-width: 600%;
+    opacity: 0%;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    width: auto;
+    max-width: auto;
+    min-width: 600%;
+    opacity: 0%;
+  }
+  100% {
+    width: auto;
+    max-width: auto;
+    min-width: 50%;
+    opacity: 100%;
+  }
+}
 /** SPLASH **/
 
 body.splash #splash-page {
 }
 
 body.splash #countdown-page {
+  display: none;
+}
+
+body.no-splash #splash-page {
+  overflow: hidden;
+}
+
+body.splash #splash-page .fifty-fifty {
+  width: auto;
+  max-width: auto;
+  min-width: 50%;
+  opacity: 100%;
+  animation: zoom-out 1s;
 }
 
 
-/** NO SPLASH **/
+/** **/
+body.no-splash #splash-page .fifty-fifty {
+  width: auto;
+  max-width: auto;
+  min-width: 50%;
+  opacity: 0%;
+  animation: zoom-in 1s;
+}
 
 body.no-splash #splash-page .fifty-fifty {
   width: auto;
   max-width: auto;
   min-width: 600%;
-  opacity: 30%;
+  opacity: 0%;
+  animation: zoom-in 1s;
 }
 
 body.no-splash #countdown-page {
-  /** remove **/ display: none;
 }
