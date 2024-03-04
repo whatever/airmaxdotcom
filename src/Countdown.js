@@ -30,21 +30,41 @@ export class Countdown {
 
     let { seconds, minutes, hours, days } = this.until;
 
+
+    seconds = String(seconds).padStart(2, "0");
+    minutes = String(minutes).padStart(2, "0");
+    hours = String(hours).padStart(2, "0");
+    days = String(days).padStart(2, "0");
+
     let frac = this.until.milliseconds / 1000;
 
     this.el.innerHTML = `
-    <div style="font-style: italic">
-      <div>
-        ${days}
-        <br>
-        <span style="font-size: 50%">days</span>
+    <div class="countdown-grid">
+
+      <!-- DAYS -->
+      <div class="days">
+        <div class="numeric">${days}</div>
+        <div class="label">days</div>
       </div>
-      <br>
-      <div>
-        <span>${hours}</span> :
-        <span>${minutes}</span> :
-        <span>${seconds}</span>
+
+      <!-- HOURS -->
+      <div class="hours">
+        <div class="numeric">${hours}</div>
+        <div class="label">hours</div>
       </div>
+
+      <!-- MINUTES -->
+      <div class="minutes">
+        <div class="numeric">&nbsp;: ${minutes}</div>
+        <div class="label">minutes</div>
+      </div>
+
+      <!-- SECONDS -->
+      <div class="seconds">
+        <div class="numeric">&nbsp;: ${seconds}</div>
+        <div class="label">seconds</div>
+      </div>
+
     </div>
     `;
   }
