@@ -1,14 +1,14 @@
 @font-face {
   font-family: "FranieTest";
   font-weight: normal;
-  src: url("/fonts/FranieTest-CondensedBold.otf") format("opentype");
+  src: url("/fonts/Franie-CondensedBold.woff") format("woff");
 }
 
 @font-face {
   font-family: "FranieTest";
   font-weight: normal;
   font-style: italic;
-  src: url("/fonts/FranieTest-ExtraCondensedExtraBoldItalic.otf") format("opentype");
+  src: url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff") format("woff");
 }
 
 @font-face {
@@ -27,9 +27,6 @@
 em {
   font-style: italic;
 }
-
-
-
 
 html {
   font-size: 100%;
