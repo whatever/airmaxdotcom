@@ -1,14 +1,16 @@
 @font-face {
   font-family: "FranieTest";
   font-weight: normal;
-  src: url("/fonts/Franie-CondensedBold.woff") format("woff");
+  src: url("/fonts/Franie-CondensedBold.woff2") format("woff2"),
+       url("/fonts/Franie-CondensedBold.woff") format("woff");
 }
 
 @font-face {
   font-family: "FranieTest";
   font-weight: normal;
   font-style: italic;
-  src: url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff") format("woff");
+  src: url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff2") format("woff2"),
+       url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff") format("woff");
 }
 
 @font-face {
@@ -244,3 +246,12 @@ body.no-splash #countdown-page {
 
 
 
+#scrolling-text-top {
+  position: fixed;
+  top: 0;
+}
+
+#scrolling-text-bottom {
+  position: fixed;
+  bottom: 0;
+}
