@@ -11,20 +11,23 @@ export class ScrollingText extends HTMLElement {
 
   }
 
+  resize() {
+  }
+
   connectedCallback() {
+    this.resize();
     this.canvas = document.createElement("canvas");
-    this.canvas.width = 300;
-    this.canvas.height = 20;
     this.text = "THE MOST EXCLUSIVE AIR MAX DROP EVER";
-    this.canvas.style.height = "100px";
+    this.canvas.style.height = "100%";
+    this.canvas.style.width = "100%";
+
+    this.appendChild(this.canvas);
+
     this.app = new ScrollingTextApp(
       this.canvas,
       this.text,
       this.attributes.direction.value == "left",
     );
-
-  console.log(this.attributes.direction);
-    this.appendChild(this.canvas);
 
     let app = this.app;
 
@@ -43,7 +46,6 @@ class ScrollingTextApp {
     this.el = el;
     this.text = text;
     this.reverse = !!reverse;
-    console.log(this.reverse);
     this.context = this.el.getContext("2d");
     this.blurb = this.generateBlurb();
   }
@@ -69,13 +71,15 @@ class ScrollingTextApp {
   }
 
   update() {
-    let t = new Date() / 60. % this.blurb.width;
+    const w = Math.max(this.blurb.width, 1);
+    const t = new Date() / 10. % this.blurb.width;
     this.offset = Math.floor(t);
   }
 
   draw() {
-    this.el.width = this.el.width;
-    this.elheight = this.el.height;
+    const bbox = this.el.parentNode.getBoundingClientRect();
+    this.el.width = bbox.width;
+    this.elheight = bbox.height;
 
     let w = this.el.width;
     let h = this.el.height;
@@ -86,15 +90,20 @@ class ScrollingTextApp {
     // ctx.fillRect(0, 0, w, h);
     //
     let x = this.offset * (this.reverse ? -1 : 1);
+    let y = h;
+
 
 
     ctx.save();
+
     ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x - this.blurb.width, h*3/4);
+    ctx.fillText(this.blurb.text, x - this.blurb.width, y);
     ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x, h*3/4);
+    ctx.fillText(this.blurb.text, x, y);
     ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x + this.blurb.width, h*3/4);
+    ctx.fillText(this.blurb.text, x + this.blurb.width, y);
+    ctx.fillStyle = "yellow";
+    ctx.fillText(this.blurb.text, x + 2*this.blurb.width, y);
     ctx.restore();
   }
 }

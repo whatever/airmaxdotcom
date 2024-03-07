@@ -253,5 +253,11 @@ body.no-splash #countdown-page {
 
 #scrolling-text-bottom {
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
+}
+
+.across-screen {
+  display: block;
+  width: 100%;
+  height: 200px;
 }
