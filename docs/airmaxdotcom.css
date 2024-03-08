@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "FranieTest";
+  font-family: "Franie";
   font-weight: normal;
   src: url("/fonts/Franie-CondensedBold.woff2") format("woff2"),
        url("/fonts/Franie-CondensedBold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "FranieTest";
+  font-family: "Franie";
   font-weight: normal;
   font-style: italic;
   src: url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff2") format("woff2"),
@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  font-family: "FranieTest", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Franie", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 html, body {
