@@ -18,6 +18,8 @@ export class ScrollingText extends HTMLElement {
     this.resize();
     this.canvas = document.createElement("canvas");
     this.text = "THE MOST EXCLUSIVE AIR MAX DROP EVER";
+    this.canvas.height = 200;
+    this.canvas.width = 1000;
     this.canvas.style.height = "100%";
     this.canvas.style.width = "100%";
 
@@ -78,32 +80,28 @@ class ScrollingTextApp {
 
   draw() {
     const bbox = this.el.parentNode.getBoundingClientRect();
-    this.el.width = bbox.width;
-    this.elheight = bbox.height;
+    // this.el.width = bbox.width;
+    // this.el.height = bbox.height;
 
     let w = this.el.width;
     let h = this.el.height;
 
     const ctx = this.context;
+    ctx.clearRect(0, 0, w, h);
 
-    // ctx.fillStyle = "black";
-    // ctx.fillRect(0, 0, w, h);
     //
     let x = this.offset * (this.reverse ? -1 : 1);
-    let y = h;
-
-
+    let y = h-10;
 
     ctx.save();
-
+    ctx.font = "bold italic 48px Franie";;
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x - this.blurb.width, y);
-    ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x, y);
-    ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x + this.blurb.width, y);
-    ctx.fillStyle = "yellow";
-    ctx.fillText(this.blurb.text, x + 2*this.blurb.width, y);
+    ctx.strokeText(this.blurb.text, x - this.blurb.width, y);
+    ctx.strokeText(this.blurb.text, x, y);
+    ctx.strokeText(this.blurb.text, x + this.blurb.width, y);
+    ctx.strokeText(this.blurb.text, x + 2*this.blurb.width, y);
     ctx.restore();
   }
 }

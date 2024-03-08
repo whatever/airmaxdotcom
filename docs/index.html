@@ -15,6 +15,17 @@
     <section class="block" id="splash-page">
       <img src="/airmaxdotcom.png" class="center fifty-fifty" alt="airmax">
     </section>
+
+    <section class="block" id="countdown-page">
+      <source src="/whatever/output_filename.webp" type="video/mp4" />
+      <div id="countdown"></div>
+      <scrolling-text direction="right" id="scrolling-text-top"></scrolling-text>
+      <scrolling-text direction="left" id="scrolling-text-bottom"></scrolling-text>
+    </section>
+
+    <script>
+      airmaxdotcom.startCountdown(document.getElementById("countdown"));
+    </script>
     <img src="/whatever/clouds.webp" class="bg">
   </body>
 </html>
