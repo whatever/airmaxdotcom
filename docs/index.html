@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>airmaxdotcom</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="airmax.com">
     <meta property="og:site_name" content="airmax.com">
@@ -13,7 +14,18 @@
   </head>
   <body class="splash">
     <section class="block" id="splash-page">
-      <img src="/airmaxdotcom.png" class="center fifty-fifty" alt="airmax">
+      <img src="/whatever/airmaxdotcom-0640.png"
+           srcset="
+           /whatever/airmaxdotcom-0640.png  640w,
+           /whatever/airmaxdotcom-1024.png 1024w,
+           /whatever/airmaxdotcom-1600.png 1600w
+           "
+           sizes="
+           (min-width: 375px) 33vw,
+           (min-width: 740px) 67vw,
+           100vw
+           "
+           class="center fifty-fifty" alt="airmax">
     </section>
 
     <section class="block" id="countdown-page">

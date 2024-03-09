@@ -26,10 +26,6 @@
   src: url("/fonts/digital-7 (mono italic).ttf")  format("truetype");
 }
 
-em {
-  font-style: italic;
-}
-
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -61,13 +57,6 @@ html, body {
   pointer-events: none;
 }
 
-#countdown {
-  font-size: 300%;
-  color: rgb(255, 255, 0);
-  display: inline-block;
-  margin: 0 auto;
-}
-
 #marquee {
   display: block;
   border: dashed 10px rgb(255, 255, 0);
@@ -89,13 +78,17 @@ html, body {
   box-sizing: border-box;
 }
 
+
 #countdown {
-  font-family: "Digital 7";
+  color: rgb(255, 255, 0);
   display: block;
-  position: absolute;
-  margin: 0;
-  top: 50%;
+  display: inline-block;
+  font-family: "Digital 7";
+  font-size: 300%;
   left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
