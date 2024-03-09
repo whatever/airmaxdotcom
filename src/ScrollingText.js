@@ -93,7 +93,7 @@ class ScrollingTextApp {
     let y = h-10;
 
     ctx.save();
-    ctx.font = "bold italic " + h + "px Franie";;
+    ctx.font = "bold italic " + (h-10) + "px Franie";;
     ctx.lineWidth = 2;
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
