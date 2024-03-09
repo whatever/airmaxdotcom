@@ -9,7 +9,7 @@
   font-family: "Franie";
   font-weight: normal;
   font-style: italic;
-  src: url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff2") format("woff2"),
+  src: url("/fonts/Franie-ExtraCondensedBoldItalic.woff2") format("woff2"),
        url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff") format("woff");
 }
 
