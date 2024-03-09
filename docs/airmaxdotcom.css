@@ -38,6 +38,8 @@ html {
 
 body {
   font-family: "Franie", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-image: url("/whatever/clouds.webp");
+  background-size: cover;
 }
 
 html, body {
