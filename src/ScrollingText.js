@@ -18,8 +18,6 @@ export class ScrollingText extends HTMLElement {
     this.resize();
     this.canvas = document.createElement("canvas");
     this.text = "THE MOST EXCLUSIVE AIR MAX DROP EVER";
-    this.canvas.height = 200;
-    this.canvas.width = 1000;
     this.canvas.style.height = "100%";
     this.canvas.style.width = "100%";
 
@@ -57,16 +55,16 @@ class ScrollingTextApp {
     const w = this.el.width;
     const h = this.el.height;
 
-    let text = this.text;
+    let text = this.text + " " + this.text + " ";
     let measurements;
 
-    do {
-      measurements = ctx.measureText(text);
-      text += " " + this.text;
-    } while(measurements.width < w);
+    ctx.save();
+    ctx.font = "bold italic " + h + "px Franie";;
+    measurements = ctx.measureText(text);
+    ctx.restore();
 
     return {
-      width: measurements.width+240,
+      width: measurements.width,
       height: measurements.height,
       text: text,
     };
@@ -74,14 +72,15 @@ class ScrollingTextApp {
 
   update() {
     const w = Math.max(this.blurb.width, 1);
-    const t = new Date() / 10. % this.blurb.width;
+    const t = (new Date() / 9.5) % this.blurb.width;
     this.offset = Math.floor(t);
   }
 
   draw() {
-    const bbox = this.el.parentNode.getBoundingClientRect();
-    // this.el.width = bbox.width;
-    // this.el.height = bbox.height;
+    const bbox = this.el.getBoundingClientRect();
+
+    this.el.width = bbox.width;
+    this.el.height = bbox.height;
 
     let w = this.el.width;
     let h = this.el.height;
@@ -94,14 +93,16 @@ class ScrollingTextApp {
     let y = h-10;
 
     ctx.save();
-    ctx.font = "bold italic 48px Franie";;
-    ctx.lineWidth = 1.5;
+    ctx.font = "bold italic " + h + "px Franie";;
+    ctx.lineWidth = 2;
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
-    ctx.strokeText(this.blurb.text, x - this.blurb.width, y);
+    let box = ctx.measureText(this.blurb.text);
+    ctx.strokeText(this.blurb.text, x - 2*box.width, y);
+    ctx.strokeText(this.blurb.text, x - box.width, y);
     ctx.strokeText(this.blurb.text, x, y);
-    ctx.strokeText(this.blurb.text, x + this.blurb.width, y);
-    ctx.strokeText(this.blurb.text, x + 2*this.blurb.width, y);
+    ctx.strokeText(this.blurb.text, x + box.width, y);
+    ctx.strokeText(this.blurb.text, x + 2*box.width, y);
     ctx.restore();
   }
 }
