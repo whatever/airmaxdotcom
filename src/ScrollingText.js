@@ -108,7 +108,6 @@ class ScrollingTextApp {
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
     let box = ctx.measureText(this.blurb.text);
-    console.log(box.width);
     ctx.strokeText(this.blurb.text, x - box.width, y);
     ctx.strokeText(this.blurb.text, x, y);
     ctx.strokeText(this.blurb.text, x + box.width, y);
