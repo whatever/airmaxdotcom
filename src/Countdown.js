@@ -30,7 +30,6 @@ export class Countdown {
 
     let { seconds, minutes, hours, days } = this.until;
 
-
     seconds = String(seconds).padStart(2, "0");
     minutes = String(minutes).padStart(2, "0");
     hours = String(hours).padStart(2, "0");
@@ -49,7 +48,7 @@ export class Countdown {
 
       <!-- HOURS -->
       <div class="hours">
-        <div class="numeric"><span class="hour-prefix">:</span>${hours}</div>
+        <div class="numeric">:${hours}</div>
         <div class="label">hours</div>
       </div>
 

@@ -75,7 +75,7 @@ class ScrollingTextApp {
     const ctx = this.context;
     ctx.save();
     ctx.font = "bold italic " + (h-10) + "px Franie";;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1;
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
     let box = ctx.measureText(this.blurb.text);
@@ -89,8 +89,8 @@ class ScrollingTextApp {
   draw() {
     const bbox = this.el.getBoundingClientRect();
 
-    this.el.width = bbox.width;
-    this.el.height = bbox.height;
+    this.el.width = bbox.width * 2;
+    this.el.height = bbox.height * 2;
 
     let w = this.el.width;
     let h = this.el.height;
@@ -104,7 +104,7 @@ class ScrollingTextApp {
 
     ctx.save();
     ctx.font = "bold italic " + (h-10) + "px Franie";;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 2.0;
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
     let box = ctx.measureText(this.blurb.text);
