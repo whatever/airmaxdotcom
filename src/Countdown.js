@@ -42,8 +42,7 @@ export class Countdown {
 
       <!-- DAYS -->
       <div class="days">
-        <div class="numeric">${days}</div>
-        <div class="label">days</div>
+        <div class="numeric">${days}</div><div class="label">&nbsp;days</div>
       </div>
 
       <!-- HOURS -->

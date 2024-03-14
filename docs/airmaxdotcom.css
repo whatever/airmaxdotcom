@@ -203,6 +203,11 @@ body.no-splash #countdown-page {
   color: white;
   font-size: 8vh;
   color: white;
+
+
+  grid-template-areas: 
+    "d d d"
+    "h m s";
 }
 
 .countdown-grid .numeric {
@@ -216,8 +221,8 @@ body.no-splash #countdown-page {
 }
 
 .countdown-grid .days {
-  grid-area: 1 / 1 / 3 / 3;
-  grid-area: 1 / 1 / 3 / 4;
+  grid-area: d;
+  font-size: 130%;
   text-align: center;
 }
 
@@ -225,25 +230,24 @@ body.no-splash #countdown-page {
   display: inline;
 }
 
-.countdown-grid .days .label {
-  display: inline;
+.days .numeric {
+}
+.days .label {
+  display: inline-block;
 }
 
 .countdown-grid .hours {
-  grid-area: 2 / 1 / 3 / 2;
-  grid-area: 3 / 1 / 5 / 2;
+  grid-area: h;
   /* background-color: red; */
 }
 
 .countdown-grid .minutes {
-  grid-area: 2 / 2 / 3 / 3;
-  grid-area: 3 / 2 / 5 / 3;
+  grid-area: m;
   /* background-color: green; */
 }
 
 .countdown-grid .seconds {
-  grid-area: 2 / 3 / 3 / 1;
-  grid-area: 3 / 3 / 5 / 4;
+  grid-area: s;
   /* background-color: black; */
 }
 
@@ -339,7 +343,7 @@ body.no-splash #countdown-page {
   display: grid;
   gap: 0;
   height: 100%;
-  grid-template-rows: 5% 29% 25% 12% 18% 6%;
+  grid-template-rows: 5% 27% 27% 12% 18% 6%;
   letter-spacing: 0.1em;
   /* background-color: gray; */
 }
