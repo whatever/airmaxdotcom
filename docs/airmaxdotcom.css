@@ -14,6 +14,14 @@
 }
 
 @font-face {
+  font-family: "Franie";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/Franie-CondensedBold.woff2") format("woff2"),
+       url("/fonts/Franie-CondensedBold.woff") format("woff");
+}
+
+@font-face {
   font-family: "Digital 7";
   font-weight: normal;
   src: url("/fonts/digital-7 (mono italic).ttf")  format("truetype");
@@ -216,8 +224,12 @@ body.no-splash #countdown-page {
 }
 
 .countdown-grid .label {
-  font-size: 33%;
+  font-family: "Franie";
+  font-weight: bold;
+  font-style: normal;
   text-align: right;
+  text-transform: uppercase;
+  font-size: 25%;
 }
 
 .countdown-grid .days {
@@ -343,7 +355,7 @@ body.no-splash #countdown-page {
   display: grid;
   gap: 0;
   height: 100%;
-  grid-template-rows: 5% 27% 27% 12% 18% 6%;
+  grid-template-rows: 5% 27% 27% 15% 18% 6%;
   letter-spacing: 0.1em;
   /* background-color: gray; */
 }
