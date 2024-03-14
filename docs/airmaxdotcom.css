@@ -387,7 +387,7 @@ body.no-splash #countdown-page {
   /* background-color: green; */
 }
 
-#email {
+#email, #mce-EMAIL {
   background-color: rgb(255, 255, 255, 0.6);
   padding: 0.25em;
   border: solid 3px white;
