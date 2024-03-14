@@ -262,7 +262,6 @@ body.no-splash #countdown-page {
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    color: black;
   }
 
   .countdown-grid .days {
@@ -392,6 +391,15 @@ body.no-splash #countdown-page {
   padding: 0.25em;
   border: solid 3px white;
   font-size: 135%;
+}
+
+@media (min-aspect-ratio: 1/1) {
+#main .selling {
+  font-size: 8vh;
+  padding: 0 15vw;
+  text-align: center;
+  /* background-color: gray; */
+}
 }
 
 .logo img {
