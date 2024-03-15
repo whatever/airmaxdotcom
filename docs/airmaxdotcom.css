@@ -234,18 +234,25 @@ body.no-splash #countdown-page {
 
 .countdown-grid .days {
   grid-area: d;
-  font-size: 130%;
   text-align: center;
 }
 
-.countdown-grid .days .numeric {
-  display: inline;
+@media (max-aspect-ratio: 1/1) {
+  .countdown-grid .days {
+    font-size: 130%;
+    text-align: center;
+  }
+  .countdown-grid .days .label {
+    display: inline;
+  }
+
+  .countdown-grid .days .numeric {
+    display: inline;
+  }
 }
 
-.days .numeric {
-}
-.days .label {
-  display: inline-block;
+.countdown-grid .days .numeric {
+  displat: inline-block;
 }
 
 .countdown-grid .hours {
@@ -349,8 +356,6 @@ body.no-splash #countdown-page {
   align-items: center;
 }
 
-
-
 #main {
   display: grid;
   gap: 0;
@@ -410,12 +415,12 @@ body.no-splash #countdown-page {
 }
 
 @media (min-aspect-ratio: 1/1) {
-#main .selling {
-  font-size: 8vh;
-  padding: 0 15vw;
-  text-align: center;
-  /* background-color: gray; */
-}
+  #main .selling {
+    font-size: 8vh;
+    padding: 0 13vw;
+    text-align: center;
+    /* background-color: gray; */
+  }
 }
 
 .logo img {

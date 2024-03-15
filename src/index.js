@@ -14,17 +14,14 @@ export function startCountdown(el) {
   (function loop() {
     countdown.update();
     countdown.draw();
-    requestAnimationFrame(loop);
+    // requestAnimationFrame(loop);
   }());
 
 }
 
-
-
-
 customElements.define("not-sneaker", NotSneaker);
-customElements.define("scrolling-text", ScrollingText);
 
+customElements.define("scrolling-text", ScrollingText);
 
 
 window.addEventListener("load", function() {
