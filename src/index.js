@@ -14,7 +14,7 @@ export function startCountdown(el) {
   (function loop() {
     countdown.update();
     countdown.draw();
-    // requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
   }());
 
 }
@@ -24,16 +24,13 @@ customElements.define("not-sneaker", NotSneaker);
 customElements.define("scrolling-text", ScrollingText);
 
 
+export function clickThrough() {
+  document.body.classList.remove("splash");
+  document.body.classList.add("no-splash");
+}
 window.addEventListener("load", function() {
-  let splash = true;
-
-  window.addEventListener("click", function() {
-    if (splash = !splash) {
-      document.body.classList.add("splash");
-      document.body.classList.remove("no-splash");
-    } else {
-      document.body.classList.remove("splash");
-      document.body.classList.add("no-splash");
-    }
-  });
+  window.addEventListener("wheel", clickThrough);
+  window.addEventListener("click", clickThrough);
+  window.addEventListener("touchstart", clickThrough);
 });
+

@@ -15,7 +15,7 @@
   <body class="splash">
 
     <section class="block" id="splash-page">
-      <img src="/whatever/airmaxdotcom-0640.png"
+      <a href="javascript:"><img src="/whatever/airmaxdotcom-0640.png"
            srcset="
            /whatever/airmaxdotcom-0640.png  640w,
            /whatever/airmaxdotcom-1024.png 1024w,
@@ -26,38 +26,64 @@
            (ax-width: 740px) 100vw,
            50vw
            "
-           class="center fifty-fifty" alt="airmax">
+           class="center fifty-fifty" alt="airmax"></a>
     </section>
 
-    <section class="block" id="countdown-page">
-      <div id="countdown-jr"></div>
-      <scrolling-text direction="right" class="across-screen" id="scrolling-text-top"></scrolling-text>
-      <scrolling-text direction="left" class="across-screen" id="scrolling-text-bottom"></scrolling-text>
-
-      <!--
-      <div id="mc_embed_shell">
-        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-        <style type="text/css">
-              #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
-              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                 We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      </style>
-      <div id="mc_embed_signup">
-          <form action="https://gmail.us22.list-manage.com/subscribe/post?u=cd0aeb034f7708f8ae561e439&amp;id=5de34a757b&amp;f_id=00d6c0e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-              <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
-                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                  <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-              <div id="mce-responses" class="clear">
-                  <div class="response" id="mce-error-response" style="display: none;"></div>
-                  <div class="response" id="mce-success-response" style="display: none;"></div>
-              </div><div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_cd0aeb034f7708f8ae561e439_5de34a757b" tabindex="-1" value=""></div><div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe"></div>
-          </div>
-      </form>
+    <div id="countdown-page">
+      <div class="header">
+        <scrolling-text direction="right" class="across-screen" id="scrolling-text-top"></scrolling-text>
       </div>
-      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
-      -->
+      <div class="valign selling"><b><em>WE'RE SELLING AIRMAX.COM TO THE HIGHEST BIDDER</em></b></div>
+      <div style="position: relative;" class="middle">
+        <div id="countdown-jr"></div>
+      </div>
+      <div style="position: relative;" class="email-signup">
+        <div class="vertical-center" style="display: inline-block;">
+          <!-- <input size="30" type="email" placeholder="" id="email"> -->
+          <!-- <div><b><em>ENTER EMAIL TO RECEIVE UPDATES:</em></b><br></div> -->
+
+          <!-- ... -->
+          <center>
+            <div id="mc_embed_shell">
+              <div id="mc_embed_signup">
+                <form action="https://gmail.us22.list-manage.com/subscribe/post?u=cd0aeb034f7708f8ae561e439&amp;id=5de34a757b&amp;f_id=00d6c0e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                  <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                      <div><b><em><label for="mce-EMAIL">ENTER EMAIL TO RECEIVE UPDATES:</label></em></b></div>
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                      <br>
+                      <input style="background-color: yellow; border: solid 0px white; font-family: 'Franie'; font-style: italic; letter-spacing: 0.1em; text-transform: uppercase; font-size: 1.5vh;"
+                      type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                    </div><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cd0aeb034f7708f8ae561e439_5de34a757b" tabindex="-1" value=""></div>
+                    <div class="clear">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </center>
+          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        </div>
+      </div>
 
 
+      <div style="position: relative;" class="logo">
+        <img src="/whatever/airmaxdotcom-white-padded.png" class="vertical-center" alt="airmax.com">
+      </div>
+
+      <div class="footer">
+        <scrolling-text direction="left" class="across-screen" id="scrolling-text-bottom"></scrolling-text>
+        <center><a href="mailto:hello@airmax.com">hello@airmax.com</a></center>
+      </div>
+
+      <script>
+        airmaxdotcom.startCountdown(document.getElementById("countdown-jr"));
+      </script>
+    </div>
 
     <script>
       airmaxdotcom.startCountdown(document.getElementById("countdown-jr"));
