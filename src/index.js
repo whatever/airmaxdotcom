@@ -24,6 +24,7 @@ customElements.define("not-sneaker", NotSneaker);
 customElements.define("scrolling-text", ScrollingText);
 
 
+/*
 export function clickThrough() {
   document.body.classList.remove("splash");
   document.body.classList.add("no-splash");
@@ -37,3 +38,4 @@ window.addEventListener("load", function() {
   window.addEventListener("wheel", clickThrough);
 });
 
+*/
