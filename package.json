@@ -13,10 +13,7 @@
     "test": "mocha --require @babel/register tests"
   },
   "dependencies": {
-    "alea": "^1.0.1",
-    "assert": "^2.0.0",
-    "npm": "^9.2.0",
-    "three": "^0.135.0"
+    "npm": "^9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

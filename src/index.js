@@ -1,7 +1,6 @@
 // AIRMAXDOTCOM
 
 import {Countdown} from "./Countdown.js";
-import {NotSneaker} from "./NotSneaker.js";
 import {ScrollingText} from "./ScrollingText.js";
 
 /**
@@ -18,8 +17,6 @@ export function startCountdown(el) {
   }());
 
 }
-
-customElements.define("not-sneaker", NotSneaker);
 
 customElements.define("scrolling-text", ScrollingText);
 
