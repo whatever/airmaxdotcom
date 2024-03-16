@@ -48,19 +48,19 @@ export class Countdown {
       <!-- HOURS -->
       <div class="hours">
         <div class="numeric">:${hours}</div>
-        <div class="label">hours</div>
+        <div class="label">HR</div>
       </div>
 
       <!-- MINUTES -->
       <div class="minutes">
         <div class="numeric">:${minutes}</div>
-        <div class="label">minutes</div>
+        <div class="label">MIN</div>
       </div>
 
       <!-- SECONDS -->
       <div class="seconds">
         <div class="numeric">:${seconds}</div>
-        <div class="label">seconds</div>
+        <div class="label">SEC</div>
       </div>
 
     </div>

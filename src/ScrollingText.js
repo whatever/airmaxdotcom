@@ -104,7 +104,7 @@ class ScrollingTextApp {
 
     ctx.save();
     ctx.font = "bold italic " + (h-10) + "px Franie";;
-    ctx.lineWidth = 2.0;
+    ctx.lineWidth = 1.0;
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "yellow";
     let box = ctx.measureText(this.blurb.text);
