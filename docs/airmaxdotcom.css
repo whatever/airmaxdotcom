@@ -464,6 +464,7 @@ body.no-splash #countdown-page {
 .logo img {
   height: 85%;
   width: 85%;
+  max-height: 150px;
 }
 
 a {
