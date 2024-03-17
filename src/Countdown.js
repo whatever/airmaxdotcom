@@ -7,6 +7,43 @@ export class Countdown {
     this.el = el;
     this.target = new Date("2024-03-26T12:00:00");
     this.until = undefined;
+    this.setup();
+  }
+
+  setup() {
+    let container = document.createElement("div");
+    container.classList.add("countdown-grid");
+
+    container.innerHTML = `
+      <!-- DAYS -->
+      <div class="days">
+        <div class="numeric" id="countdown-days"></div><div class="label">&nbsp;days</div>
+      </div>
+
+      <!-- HOURS -->
+      <div class="hours">
+        <div class="numeric" id="countdown-hours"></div>
+        <div class="label">HR</div>
+      </div>
+
+      <!-- MINUTES -->
+      <div class="minutes" id="countdown-minutes">
+        <div class="numeric"></div>
+        <div class="label">MIN</div>
+      </div>
+
+      <!-- SECONDS -->
+      <div class="seconds">
+        <div class="numeric" id="countdown-seconds"></div>
+        <div class="label">SEC</div>
+      </div>
+    `;
+
+    this.days = container.querySelector("#countdown-days");
+    this.hours = container.querySelector("#countdown-hours");
+    this.minutes = container.querySelector("#countdown-minutes");
+    this.seconds = container.querySelector("#countdown-seconds");
+    this.el.appendChild(container);
   }
 
   update() {
@@ -37,33 +74,10 @@ export class Countdown {
 
     let frac = this.until.milliseconds / 1000;
 
-    this.el.innerHTML = `
-    <div class="countdown-grid">
+    this.days.textContent = days;
+    this.hours.textContent = ":" + hours;
+    this.minutes.querySelector(".numeric").textContent = ":" + minutes;
+    this.seconds.textContent = ":" + seconds;
 
-      <!-- DAYS -->
-      <div class="days">
-        <div class="numeric">${days}</div><div class="label">&nbsp;days</div>
-      </div>
-
-      <!-- HOURS -->
-      <div class="hours">
-        <div class="numeric">:${hours}</div>
-        <div class="label">HR</div>
-      </div>
-
-      <!-- MINUTES -->
-      <div class="minutes">
-        <div class="numeric">:${minutes}</div>
-        <div class="label">MIN</div>
-      </div>
-
-      <!-- SECONDS -->
-      <div class="seconds">
-        <div class="numeric">:${seconds}</div>
-        <div class="label">SEC</div>
-      </div>
-
-    </div>
-    `;
   }
 }

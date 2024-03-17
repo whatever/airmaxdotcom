@@ -27,7 +27,11 @@ export function clickThrough() {
   window.removeEventListener("click", clickThrough);
   window.removeEventListener("touchstart", clickThrough);
   window.removeEventListener("wheel", clickThrough);
+  setTimeout(() => {
+    document.getElementById("splash-page").style.display = "none";
+  }, 300);
 }
+
 window.addEventListener("load", function() {
   window.addEventListener("click", clickThrough);
   window.addEventListener("touchstart", clickThrough);
