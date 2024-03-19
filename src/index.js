@@ -36,10 +36,7 @@ window.addEventListener("load", function() {
   window.addEventListener("click", clickThrough);
   window.addEventListener("touchstart", clickThrough);
   window.addEventListener("wheel", clickThrough);
-	clickThrough();
-
 	let el = document.getElementById("countdown-jr");
-
 	if (el) {
 		airmaxdotcom.startCountdown(el);
 	}
