@@ -1,0 +1,489 @@
+@font-face {
+  font-family: "Franie";
+  font-weight: normal;
+  src: url("/fonts/Franie-CondensedBold.woff2") format("woff2"),
+       url("/fonts/Franie-CondensedBold.woff") format("woff");
+}
+
+@keyframes floating {
+  0%   { margin-top: 0; }
+  50%  { margin-top: 3em; }
+  100% { margin-top: 0; }
+}
+
+.floating {
+  animation: floating 3s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@font-face {
+  font-family: "Franie";
+  font-weight: normal;
+  font-style: italic;
+  src: url("/fonts/Franie-ExtraCondensedBoldItalic.woff2") format("woff2"),
+       url("/fonts/Franie-ExtraCondensedExtraBoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Franie";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/Franie-CondensedBold.woff2") format("woff2"),
+       url("/fonts/Franie-CondensedBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Digital 7";
+  font-weight: normal;
+  src: url("/fonts/digital-7 (mono italic).ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "Digital 7";
+  font-weight: normal;
+  font-style: italic;
+  src: url("/fonts/digital-7 (mono italic).ttf")  format("truetype");
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 10px;
+}
+
+body {
+  font-family: "Franie", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-image: url("/whatever/clouds.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: -100;    
+  background-size: cover;
+  pointer-events: none;
+}
+
+#marquee {
+  display: block;
+  border: dashed 10px rgb(255, 255, 0);
+  padding: 0;
+  position: absolute;
+  left: 2%;
+  top: 2%;
+
+  /* min-width: 96%;
+   */
+
+  margin: 0;
+
+  width: 96%;
+  height: 96%;
+
+  z-index: -90;    
+
+  box-sizing: border-box;
+}
+
+#countdown-jr {
+  display: inline-block;
+  font-family: "Digital 7";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+
+
+.block {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.center {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fifty-fifty {
+  width: auto;
+  max-width: 100%;
+}
+
+
+
+
+
+
+/** NO SPLASH **/
+
+@keyframes zoom-in {
+  0% {
+    width: auto;
+    max-width: auto;
+    min-width: 50%;
+    opacity: 100%;
+  }
+  100% {
+    width: auto;
+    max-width: auto;
+    min-width: 600%;
+    opacity: 0%;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    width: auto;
+    max-width: auto;
+    min-width: 600%;
+    opacity: 0%;
+  }
+  100% {
+    width: auto;
+    max-width: auto;
+    min-width: 50%;
+    opacity: 100%;
+  }
+}
+/** SPLASH **/
+
+body.splash #splash-page {
+}
+
+body.splash #countdown-page {
+  display: none;
+}
+
+body.no-splash #splash-page {
+  overflow: hidden;
+}
+
+body.splash #splash-page .fifty-fifty {
+  width: auto;
+  max-width: auto;
+  min-width: 50%;
+  opacity: 100%;
+}
+
+
+/** **/
+body.no-splash #splash-page .fifty-fifty {
+  width: auto;
+  max-width: auto;
+  min-width: 50%;
+  opacity: 0%;
+  animation: zoom-in 0.6s;
+}
+
+body.no-splash #countdown-page {
+}
+
+
+/** GRIDDY **/
+
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: auto;
+  color: black;
+  color: white;
+  font-size: 8vh;
+  color: white;
+
+
+  grid-template-areas: 
+    "d d d"
+    "h m s";
+}
+
+.countdown-grid .numeric {
+  font-size: 120%;
+  text-align: right;
+}
+
+.countdown-grid .label {
+  font-family: "Franie";
+  font-weight: bold;
+  font-style: normal;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 25%;
+}
+
+.countdown-grid .days {
+  grid-area: d;
+  text-align: center;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .countdown-grid .days {
+    font-size: 130%;
+    text-align: center;
+  }
+  .countdown-grid .days .label {
+    display: inline;
+  }
+
+  .countdown-grid .days .numeric {
+    display: inline;
+  }
+}
+
+.countdown-grid .days .numeric {
+  displat: inline-block;
+}
+
+.countdown-grid .hours {
+  grid-area: h;
+  /* background-color: red; */
+}
+
+.countdown-grid .minutes {
+  grid-area: m;
+  /* background-color: green; */
+}
+
+.countdown-grid .seconds {
+  grid-area: s;
+  /* background-color: black; */
+}
+
+.countdown-grid .hour-prefix {
+  display: none;
+}
+
+
+/**
+ * nvm
+ */
+@media (min-aspect-ratio: 1/1) {
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .countdown-grid .days {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .countdown-grid .hours {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .countdown-grid .minutes {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  .countdown-grid .seconds {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+
+  .countdown-grid .hour-prefix {
+    display: inline;
+  }
+}
+
+
+
+
+#countdown {
+  width: 60vw;
+}
+
+@media (max-width: 600px) {
+  #countdown {
+    width: 90vw;
+    background-color: red;
+    font-size: 12vw;
+  }
+}
+
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+
+
+#scrolling-text-top {
+}
+
+#scrolling-text-bottom {
+}
+
+.across-screen {
+  display: block;
+  width: 100%;
+  height: 75%;
+}
+
+.valign {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#countdown-page,
+#main {
+  display: grid;
+  gap: 0;
+  height: 100%;
+  grid-template-rows:
+    4%    /* header */
+    25%   /* selling */
+    35%   /* middle */
+    11%
+    21%
+    4%;
+  letter-spacing: 0.1em;
+}
+
+#main div {
+  position: relative;
+}
+
+#countdown-page .header,
+#main .header {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  display: flex;
+  align-items: center;
+}
+
+.selling {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  color: yellow;
+  text-align: center;
+  padding: 0 10vw;
+  margin: 0;
+  font-size: 3.5vh;
+  display: flex;
+  align-items: center;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+
+.email-signup {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+  color: yellow;
+  font-size: 1.5vh;
+  position: relative;
+}
+
+.logo {
+  grid-row: 5 / 6;
+  grid-column: 1 / 2;
+  text-align: center;
+  position: relative;
+  font-size: 2.35vh;
+}
+
+.footer {
+  grid-row: 6 / 7;
+  grid-column: 1 / 2;
+  display: flex;
+  align-items: center;
+}
+
+#email-signup-container {
+  width: 70%;
+}
+
+#email, #mce-EMAIL {
+  background-color: rgb(255, 255, 255, 0.6);
+  border: solid 2px white;
+  color: black;
+  border-radius: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+#mc-embedded-subscribe {
+  border-radius: 0;
+  color: black;
+  margin-top: 0.4em;
+}
+
+#mc_embed_shell {
+  width: 100%;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .middle {
+    font-size: 200%;
+  }
+  .countdown-grid {
+    font-size: 600%;
+  }
+  .selling {
+    font-size: 8vh;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.logo img {
+  height: 85%;
+  width: 85%;
+  max-height: 150px;
+}
+
+a {
+  color: yellow;
+  text-decoration: underline;
+font-style: normal;
+}
+
+a:hover {
+  color: white;
+}
