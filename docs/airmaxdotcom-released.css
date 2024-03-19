@@ -369,12 +369,11 @@ body.no-splash #countdown-page {
   gap: 0;
   height: 100%;
   grid-template-rows:
-    4%    /* header */
-    25%   /* selling */
-    35%   /* middle */
-    11%
-    21%
-    4%;
+    4%     /* header */
+    auto   /* selling */
+    auto   /* middle */
+		auto
+		4%;
   letter-spacing: 0.1em;
 }
 
@@ -395,9 +394,9 @@ body.no-splash #countdown-page {
   grid-column: 1 / 2;
   color: yellow;
   text-align: center;
-  padding: 0 10vw;
+  padding: 0 10%;
   margin: 0;
-  font-size: 3.5vh;
+	font-size: 10vw;
   display: flex;
   align-items: center;
 }
@@ -410,7 +409,7 @@ body.no-splash #countdown-page {
 }
 
 .email-signup {
-  grid-row: 4 / 5;
+  grid-row: 3 / 4;
   grid-column: 1 / 2;
   color: yellow;
   font-size: 1.5vh;
@@ -418,7 +417,7 @@ body.no-splash #countdown-page {
 }
 
 .logo {
-  grid-row: 5 / 6;
+  grid-row: 4 / 5;
   grid-column: 1 / 2;
   text-align: center;
   position: relative;
@@ -426,7 +425,7 @@ body.no-splash #countdown-page {
 }
 
 .footer {
-  grid-row: 6 / 7;
+  grid-row: 5 / 6;
   grid-column: 1 / 2;
   display: flex;
   align-items: center;
@@ -434,6 +433,7 @@ body.no-splash #countdown-page {
 
 #email-signup-container {
   width: 70%;
+text-align: center;
 }
 
 #email, #mce-EMAIL {
@@ -455,6 +455,14 @@ body.no-splash #countdown-page {
   width: 100%;
 }
 
+#yak {
+	text-transform: uppercase;
+	font-style: italic;
+	font-size: 2vh;
+	margin: 0;
+	padding: 0;
+}
+
 @media (min-aspect-ratio: 1/1) {
   .middle {
     font-size: 200%;
@@ -464,12 +472,14 @@ body.no-splash #countdown-page {
   }
   .selling {
     font-size: 8vh;
-    padding: 0;
     margin: 0;
     text-align: center;
     display: flex;
     align-items: center;
   }
+	#yak {
+    font-size: 4vh;
+	}
 }
 
 .logo img {
@@ -481,7 +491,7 @@ body.no-splash #countdown-page {
 a {
   color: yellow;
   text-decoration: underline;
-font-style: normal;
+	font-style: normal;
 }
 
 a:hover {

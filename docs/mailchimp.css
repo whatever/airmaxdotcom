@@ -14,6 +14,16 @@
 	margin-top: 0.5em;
 }
 
+
+#mce-BID:focus,
+#mce-EMAIL:focus,
+#mce-NAME:focus
+{
+	outline: none;
+  background-color: rgb(255, 255, 255, 0.8);
+}
+
+
 #mc-embedded-subscribe {
 	font-family: "Franie", arial, sans-serif;
 	font-size: 125%;

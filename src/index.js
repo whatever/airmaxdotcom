@@ -36,5 +36,11 @@ window.addEventListener("load", function() {
   window.addEventListener("click", clickThrough);
   window.addEventListener("touchstart", clickThrough);
   window.addEventListener("wheel", clickThrough);
-  airmaxdotcom.startCountdown(document.getElementById("countdown-jr"));
+	clickThrough();
+
+	let el = document.getElementById("countdown-jr");
+
+	if (el) {
+		airmaxdotcom.startCountdown(el);
+	}
 });
