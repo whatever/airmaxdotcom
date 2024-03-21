@@ -3,6 +3,8 @@
 import {Countdown} from "./Countdown.js";
 import {ScrollingText} from "./ScrollingText.js";
 
+import {io} from "socket.io-client";
+
 /**
  * Yikes
  */
@@ -32,12 +34,21 @@ export function clickThrough() {
   }, 300);
 }
 
+
 window.addEventListener("load", function() {
   window.addEventListener("click", clickThrough);
   window.addEventListener("touchstart", clickThrough);
   window.addEventListener("wheel", clickThrough);
+
 	let el = document.getElementById("countdown-jr");
+
 	if (el) {
 		airmaxdotcom.startCountdown(el);
 	}
+
+  let socket = io.connect("https://live.airmax.com", {transports: ["websocket"]});
+
+  socket.on("update", () => {
+    console.log("(:");
+  });
 });
