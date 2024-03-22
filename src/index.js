@@ -52,10 +52,12 @@ window.addEventListener("load", function() {
     console.log("(:");
   });
 
+  /*
   setInterval(() => {
     let ele = document.getElementById("airmax-splash");
     let box = ele.getBoundingClientRect();
     console.log(box);
   }, 1000);
+  */
 
 });
