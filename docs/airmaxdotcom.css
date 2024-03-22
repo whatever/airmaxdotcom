@@ -54,7 +54,11 @@ html {
 
 body {
   font-family: "Franie", 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-image: url("/whatever/clouds.webp");
+  background: rgb(35, 110, 171);
+  background: url("/whatever/clouds.webp"),
+              linear-gradient(180deg, rgb(35, 110, 171) 0%, rgb(70, 149, 195) 100%);
+  background-position: center;
+  background-size: cover;
   background-position: center;
   background-size: cover;
 }

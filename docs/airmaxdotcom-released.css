@@ -45,26 +45,25 @@
   src: url("/fonts/digital-7 (mono italic).ttf")  format("truetype");
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size: 10px;
-  background-color: rgb(41, 118, 174);
 }
 
 body {
   font-family: "Franie", 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: rgb(41, 118, 174);
-  background-image: url("/whatever/clouds.webp");
+  background: url("/whatever/clouds.webp"),
+              linear-gradient(180deg, rgb(35, 110, 171) 0%, rgb(70, 149, 195) 100%);
   background-position: center;
   background-size: cover;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
 }
 
 #marquee {
