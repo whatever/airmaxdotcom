@@ -6,7 +6,7 @@
   "author": "matt <3",
   "license": "UNLICENSED",
   "scripts": {
-    "ayyy": "webpack",
+    "ayyy": "webpack --mode production",
     "bleach": "javascript-obfuscator dist/pool-water.bundled.js",
     "livest": "node ./node_modules/webpack/bin/webpack.js --watch --progresswebpack",
     "lmao": "webpack serve --static app --no-hot --open",
