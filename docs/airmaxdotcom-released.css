@@ -124,6 +124,7 @@ html, body {
 .fifty-fifty {
   width: auto;
   max-width: 100%;
+  width: 100%;
 }
 
 
@@ -472,7 +473,7 @@ text-align: center;
 
 .logo img {
 	height: 80%;
-width: 80%;
+  width: 80%;
   max-height: 350px;
 }
 

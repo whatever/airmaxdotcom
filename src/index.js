@@ -51,4 +51,11 @@ window.addEventListener("load", function() {
   socket.on("update", () => {
     console.log("(:");
   });
+
+  setInterval(() => {
+    let ele = document.getElementById("airmax-splash");
+    let box = ele.getBoundingClientRect();
+    console.log(box);
+  }, 1000);
+
 });
