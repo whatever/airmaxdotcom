@@ -50,11 +50,12 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size: 10px;
+  background-color: rgb(41, 118, 174);
 }
 
 body {
   font-family: "Franie", 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background-color: #0099FF;
+  background-color: rgb(41, 118, 174);
   background-image: url("/whatever/clouds.webp");
   background-position: center;
   background-size: cover;
