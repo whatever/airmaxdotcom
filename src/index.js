@@ -20,7 +20,21 @@ export function startCountdown(el) {
 
 }
 
-customElements.define("scrolling-text", ScrollingText);
+
+function socket() {
+  let sock = io.connect(AIRMAX_SOCKETIO_URL);
+
+  sock.on("visit", (data) => {
+  });
+
+  sock.on("bid", (data) => {
+  });
+
+  sock.on("subscribe", (data) => {
+  });
+
+  return sock;
+}
 
 
 export function clickThrough() {
@@ -34,7 +48,6 @@ export function clickThrough() {
   }, 300);
 }
 
-
 window.addEventListener("load", function() {
   window.addEventListener("click", clickThrough);
   window.addEventListener("touchstart", clickThrough);
@@ -46,16 +59,8 @@ window.addEventListener("load", function() {
 		airmaxdotcom.startCountdown(el);
 	}
 
-  let url = "https://live.airmax.com";
-  url = "http://localhost:8080";
-
-  let socket = io.connect(url, {transports: ["websocket"]});
-
-  socket.on("update", () => {
-    console.log("(:");
-  });
-
+  const sock = socket();
 });
 
 
-console.log("seek me out =", AIRMAX_SOCKETIO_URL);
+customElements.define("scrolling-text", ScrollingText);

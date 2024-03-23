@@ -2,12 +2,11 @@ const webpack = require("webpack");
 
 
 function url(mode) {
-
   if (mode === "production") {
-    return "http://localhost:8181";
+    return "https://live.airmax.com";
   }
 
-  return "http://localhost:8181";
+  return "http://localhost:8080";
 }
 
 
