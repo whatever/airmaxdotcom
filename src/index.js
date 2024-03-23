@@ -46,18 +46,16 @@ window.addEventListener("load", function() {
 		airmaxdotcom.startCountdown(el);
 	}
 
-  let socket = io.connect("https://live.airmax.com", {transports: ["websocket"]});
+  let url = "https://live.airmax.com";
+  url = "http://localhost:8080";
+
+  let socket = io.connect(url, {transports: ["websocket"]});
 
   socket.on("update", () => {
     console.log("(:");
   });
 
-  /*
-  setInterval(() => {
-    let ele = document.getElementById("airmax-splash");
-    let box = ele.getBoundingClientRect();
-    console.log(box);
-  }, 1000);
-  */
-
 });
+
+
+console.log("seek me out =", AIRMAX_SOCKETIO_URL);
