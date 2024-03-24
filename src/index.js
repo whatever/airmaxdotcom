@@ -25,6 +25,10 @@ function socket() {
 
   let sock = io.connect(AIRMAX_SOCKETIO_URL);
 
+  sock.on("subscribe", (blob) => {
+    console.log("(:");
+  });
+
   sock.on("visit", (data) => {
     console.log("data =", data);
   });
