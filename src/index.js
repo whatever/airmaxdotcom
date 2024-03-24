@@ -42,7 +42,10 @@ function socket() {
 
 function updateBids(count) {
   let el = document.getElementById("total-bids");
-  el.textContent = count;
+
+  if (el) {
+    el.textContent = count;
+  }
 }
 
 
