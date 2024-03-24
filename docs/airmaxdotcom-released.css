@@ -87,6 +87,10 @@ body {
   box-sizing: border-box;
 }
 
+#its-the-bids-for-me.has-bids {
+  margin-top: 0.45em;
+}
+
 #countdown-jr {
   display: inline-block;
   font-family: "Digital 7";

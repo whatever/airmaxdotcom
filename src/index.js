@@ -51,6 +51,8 @@ function updateBids(count) {
     return;
   }
 
+  el.classList.remove("has-bids");
+
   if (!count) {
     return;
   }
@@ -58,6 +60,7 @@ function updateBids(count) {
   let bidders = count === 1 ? "bidder" : "bidders";
 
   el.innerHTML = "<span id=\"total-bids\">" + count + "</span> " + bidders + " so far";
+  el.classList.add("has-bids");
 }
 
 
