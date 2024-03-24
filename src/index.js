@@ -41,20 +41,30 @@ function socket() {
 }
 
 function updateBids(count) {
-  let el = document.getElementById("total-bids");
+  let el = document.getElementById("its-the-bids-for-me");
 
-  if (el) {
-    el.textContent = count; }
+  if (!el) {
+    return;
+  }
+
+  if (count === undefined) {
+    return;
+  }
+
+  el.innerHTML = "<span id=\"total-bids\">" + count + "</span> bidders so far";
 }
 
 
 function status() {
-  fetch(AIRMAX_URL).then((response) => {
+  let url =  AIRMAX_URL;
+  fetch(url).then((response) => {
     return response.json();
   }).then((blob) => {
     let { data } = blob;
     let { total_bids } = data;
     updateBids(total_bids);
+  }).catch((err) => {;
+    updateBids(undefined);
   });
 }
 
