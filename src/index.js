@@ -44,8 +44,7 @@ function updateBids(count) {
   let el = document.getElementById("total-bids");
 
   if (el) {
-    el.textContent = count;
-  }
+    el.textContent = count; }
 }
 
 
@@ -57,6 +56,14 @@ function status() {
     let { total_bids } = data;
     updateBids(total_bids);
   });
+}
+
+function hasSubscribed() {
+  let resp = document.getElementById("mce-success-response");
+  if (!resp) {
+    return false;
+  }
+  return resp.style.display !== "none";
 }
 
 export function clickThrough() {
@@ -84,6 +91,14 @@ window.addEventListener("load", function() {
   const sock = socket();
 
   status();
+
+  document.getElementById("mc-embedded-subscribe-form").addEventListener("reset", () => {
+    if (!hasSubscribed()) {
+      return;
+    }
+    let yikes = document.getElementById("email-signup-section");
+    yikes.classList.add("subscribed");
+  });
 });
 
 
