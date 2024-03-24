@@ -51,11 +51,13 @@ function updateBids(count) {
     return;
   }
 
-  if (count === undefined) {
+  if (!count) {
     return;
   }
 
-  el.innerHTML = "<span id=\"total-bids\">" + count + "</span> bidders so far";
+  let bidders = count === 1 ? "bidder" : "bidders";
+
+  el.innerHTML = "<span id=\"total-bids\">" + count + "</span> " + bidders + " so far";
 }
 
 
