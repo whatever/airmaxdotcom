@@ -479,7 +479,7 @@ text-align: center;
   max-height: 350px;
 }
 
-a {
+a, a:visited, a:active {
   color: yellow;
   text-decoration: underline;
 	font-style: normal;
@@ -490,16 +490,16 @@ a:hover {
 }
 
 .mc-field-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
-.mce-field-group input,
-.mce-field-group .mce_inline_error {
+#mc_embed_signup div.mce_inline_error {
+  position: absolute;
   display: block;
-  text-align: center;
+  margin: 0 auto;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 #thanks {
