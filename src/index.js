@@ -22,20 +22,35 @@ export function startCountdown(el) {
 
 
 function socket() {
+
   let sock = io.connect(AIRMAX_SOCKETIO_URL);
 
   sock.on("visit", (data) => {
+    console.log("data =", data);
   });
 
   sock.on("bid", (data) => {
+    console.log("data =", data);
   });
 
   sock.on("subscribe", (data) => {
+    console.log("data =", data);
   });
 
   return sock;
 }
 
+
+function status() {
+  fetch(AIRMAX_URL).then((response) => {
+    return response.json();
+  }).then((blob) => {
+    let { data } = blob;
+    let { total_bids } = data;
+    let el = document.getElementById("total-bids");
+    el.textContent = total_bids;
+  });
+}
 
 export function clickThrough() {
   document.body.classList.remove("splash");
@@ -60,6 +75,8 @@ window.addEventListener("load", function() {
 	}
 
   const sock = socket();
+
+  status();
 });
 
 

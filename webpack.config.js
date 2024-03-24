@@ -1,6 +1,14 @@
 const webpack = require("webpack");
 
 
+function liveHostUrl(mode) {
+  if (mode === "production") {
+    return "https://live.airmax.com/lmk/status";
+  }
+  return "http://localhost:8080/lmk/status";
+}
+
+
 function url(mode) {
   if (mode === "production") {
     return "https://live.airmax.com";
@@ -42,6 +50,10 @@ module.exports = (env, {mode}) => {
     },
     devServer: {
       proxy: {
+        "/lmk": {
+          target: 'http://localhost:8181',
+          // pathRewrite: {'^/lmk': ''},
+        },
         '/socket.io': {
           target: 'http://localhost:8181',
           ws: true
@@ -50,6 +62,7 @@ module.exports = (env, {mode}) => {
     },
     plugins: [
       new webpack.DefinePlugin({
+        "AIRMAX_URL": JSON.stringify(liveHostUrl(mode)),
         "AIRMAX_SOCKETIO_URL": JSON.stringify(url(mode)),
       }),
     ],
