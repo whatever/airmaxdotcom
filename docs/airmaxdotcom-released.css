@@ -502,6 +502,10 @@ a:hover {
   text-align: center;
 }
 
+#thanks {
+  display: none;
+}
+
 .subscribed #thanks {
   display: block;
   font-style: italic;
