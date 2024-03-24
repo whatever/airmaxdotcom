@@ -33,11 +33,16 @@ function socket() {
     console.log("data =", data);
   });
 
-  sock.on("subscribe", (data) => {
-    console.log("data =", data);
+  sock.on("subscribe", (blob) => {
+    updateBids(blob.data.total_bids);
   });
 
   return sock;
+}
+
+function updateBids(count) {
+  let el = document.getElementById("total-bids");
+  el.textContent = count;
 }
 
 
@@ -47,8 +52,7 @@ function status() {
   }).then((blob) => {
     let { data } = blob;
     let { total_bids } = data;
-    let el = document.getElementById("total-bids");
-    el.textContent = total_bids;
+    updateBids(total_bids);
   });
 }
 
