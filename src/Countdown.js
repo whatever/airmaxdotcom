@@ -5,7 +5,9 @@ export class Countdown {
 
   constructor(el) {
     this.el = el;
-    this.target = new Date("2024-03-26T12:00:00");
+    this.target = new Date("2024-03-25T12:00:00");
+    this.target = new Date("2024-03-25T09:00:00");
+    this.target = new Date(1711371600000);
     this.until = undefined;
     this.setup();
   }
