@@ -143,24 +143,11 @@ body {
     width: auto;
     max-width: auto;
     min-width: 600%;
+    filter: blur(8rem);
     opacity: 0%;
   }
 }
 
-@keyframes zoom-out {
-  0% {
-    width: auto;
-    max-width: auto;
-    min-width: 600%;
-    opacity: 0%;
-  }
-  100% {
-    width: auto;
-    max-width: auto;
-    min-width: 50%;
-    opacity: 100%;
-  }
-}
 /** SPLASH **/
 
 body.splash #splash-page {
